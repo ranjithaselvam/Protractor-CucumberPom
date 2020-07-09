@@ -1,0 +1,18 @@
+{
+    "restAPI": "(//h4[@class='media-box-heading ng-binding'])[1]",
+    "status": "//select[@name='status']",
+    "pass":"[value='PASS']",
+    "passtestcase":"#view-report-filter > div.slimScrollDiv > scrollable > table",
+    "toggle":"label.pull-right > span",
+    "totaltest":"//h4[.='10 TEST(S)']",
+    "passtest":"//h4[.='9']",
+    "failtest":"//h4[.='1']",
+    "skiptest":"//h4[.='0']",
+
+
+
+
+    "customer" : "//select[@name='customers']",
+    "falcon" : "[value='falcon']"
+
+}

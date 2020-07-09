@@ -5,6 +5,10 @@ import { expect } from 'chai'
 import { ElementHelper } from '../helper/commonUtility';
 import { PropertiesFileReader } from '../utility/propertyfilereader';
 import { FilePath } from '../utility/filePath';
+
+import value, * as dashboardloc from 'C:/Users/ranjitha.selvam/Desktop/Atmecs/Locators/dashboardloc.json'
+import * as recentrunloc from 'C:/Users/ranjitha.selvam/Desktop/Atmecs/Locators/recentrunloc.json'
+
 let helper = new ElementHelper();
 let dashboardPageLoc = new PropertiesFileReader(FilePath.dashBoardPage);
 
@@ -39,30 +43,39 @@ When(/^Click REST API TEST RESULT Link in dashboard$/, { timeout: 70000 }, async
 
 });
 
-// When(/^Select status as pass$/,{ timeout: 70000 }, async function () {
-    
-//     // await  element(by.xpath((<any>dashboardloc).status)).$((<any>dashboardloc).pass).click();
-//  helper.locatortype(dashboardPageLoc.propertiesFileData('loc.filter.status')).$('loc.filter.pass').click();
-// });
+When(/^Select status as pass$/, { timeout: 70000 }, async function () {
+
+
+    await element(by.cssContainingText("option", "Pass")).click();
+    // helper.scrollToDown(200);
+
+});
 
 
 
-// Then(/^Able to get pass test cases$/,{ timeout: 70000 }, async function (table:TableDefinition) {
+// Then(/^Able to get pass test cases$/, { timeout: 70000 }, async function (table:TableDefinition) {
 
-//     var status= await element(by.css((<any>dashboardloc).passtestcase)).getText();
-//     // helpers.getTtitle(element(by.css((<any>dashboardloc).passtestcase)));
-//     console.log(status);
-//     var detail=table.raw();
-    
-//         detail.forEach(function(value)
-//         {
+//     var actualdata:string[];
+//     var assertvalue:string[];
+//    await  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.passtestcase')).then(function (passStatus) {
+       
+//         actualdata=passStatus.split("\n");
+//          assertvalue=actualdata[3].split(" ");
+//         console.log(assertvalue[0]);
+       
+//     });
+//     var detail = table.raw();
+
+//         detail.forEach(function (value) {
+
+//             console.log("expec :" + value[0]);
+//             expect(assertvalue[0]).to.be.equals(value[0]);
            
-//             console.log("expec :"+value);
-//             // expect(detail).to.be.equals(value)
 //         });
-        
+
+
+
     
-//     //expect(status).to.be.equals(detail.Test Case Name );
 
 
 
@@ -70,9 +83,9 @@ When(/^Click REST API TEST RESULT Link in dashboard$/, { timeout: 70000 }, async
 
 // });
 
-When(/^User click on toggle button$/,{ timeout: 100000 }, async function () {
+When(/^User click on toggle button$/, { timeout: 100000 }, async function () {
 
-  await  helper.locatortype(dashboardPageLoc.propertiesFileData('loc.btn.toggle')).click();
+    await helper.locatortype(dashboardPageLoc.propertiesFileData('loc.btn.toggle')).click();
 });
 
 
@@ -80,38 +93,34 @@ When(/^User click on toggle button$/,{ timeout: 100000 }, async function () {
 
 
 
-Then(/^User can able to view test status$/,{ timeout: 100000 }, async function () {
-
-   
-// 	var actualtest =	await element(by.xpath((<any>dashboardloc).totaltest)).getText();
-   var testcase= helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.totaltest'));
-   console.log("xxxx :"+testcase)
-   expect(testcase).to.be.equals('10 TEST(S)')
-//    var actualpass=await element(by.xpath((<any>dashboardloc).passtest)).getText();
-   
-//    var actualfail=await element(by.xpath((<any>dashboardloc).failtest)).getText();
-   
-//    var actualskip=await element(by.xpath((<any>dashboardloc).skiptest)).getText();
-   
+// Then(/^User can able to view test status$/, { timeout: 100000 }, async function () {
 
 
-// //    var rows=table.hashes();
-// //    _.each(rows,function(row:any)
-// //     {
-// //       console.log(row.status+" "+row.details)
-// //      })
-//      var expected=table.rowsHash()
+//     // 	var actualtest =	await element(by.xpath((<any>dashboardloc).totaltest)).getText();
+//     var actualtest=  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.totaltest'));
     
-//   expect(actualtest).to.be.equals(expected.testrun);
-//   expect(actualpass).to.be.equals(expected.pass);
-//   expect(actualfail).to.be.equals(expected.fail);
-//   expect(actualskip).to.be.equals(expected.skip);
-  
-// // expect(pass1).to.be.equals(row.pass)
-// // expect(fail1).to.be.equals(row.fail)
-// // expect(skip1).to.be.equals(row.skip)
+//     var actualpass=  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.passtest'));
+//     var actualfail =helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.failtest'));
+//     var actualskip= helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.skiptest'));
 
-});
+
+    //    var actualpass=await element(by.xpath((<any>dashboardloc).passtest)).getText();
+
+    //    var actualfail=await element(by.xpath((<any>dashboardloc).failtest)).getText();
+
+    //    var actualskip=await element(by.xpath((<any>dashboardloc).skiptest)).getText();
+
+
+
+    //      var expected=table.rowsHash();
+
+    //   expect(actualtest).to.be.equals(expected.testrun);
+    //   expect(actualpass).to.be.equals(expected.pass);
+    //   expect(actualfail).to.be.equals(expected.fail);
+    //   expect(actualskip).to.be.equals(expected.skip);
+
+   
+// });
 
 // /*SCENARIO :2 */
 
@@ -122,10 +131,10 @@ Then(/^User can able to view test status$/,{ timeout: 100000 }, async function (
 
 // When(/^Select product$/,  { timeout: 100000 }, async function () {
 //     await element(by.xpath((<any>recentrunloc).product)).click();
-    
+
 // });
 // When(/^Select test case$/,  { timeout: 100000 }, async function () {
-   
+
 //     await element(by.xpath((<any>recentrunloc).testcase)).click();
 // });
 

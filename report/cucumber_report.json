@@ -1,159 +1,44 @@
 [
   {
     "keyword": "Feature",
-    "name": "Main navigation",
-    "line": 1,
-    "id": "main-navigation",
+    "name": "falcon dashboard",
+    "line": 3,
+    "id": "falcon-dashboard",
     "tags": [],
-    "uri": "features\\dashboard.feature",
+    "uri": "features\\sampledashboard.feature",
     "elements": [
       {
-        "id": "main-navigation;dashboard",
+        "id": "falcon-dashboard;test-case-list",
         "keyword": "Scenario",
-        "line": 3,
-        "name": "Dashboard",
-        "tags": [
-          {
-            "name": "@dashboard",
-            "line": 2
-          }
-        ],
+        "line": 4,
+        "name": "test case list",
+        "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 4,
-            "name": "User launch the chrome browser",
-            "match": {
-              "location": "stepdefinitions\\dashboard.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
             "line": 5,
             "name": "User opens URL \"http://10.10.10.231:8082/#/app/dashboard\"",
             "match": {
-              "location": "stepdefinitions\\dashboard.ts:18"
+              "location": "stepdefinitions\\sampledashboard.ts:14"
             },
             "result": {
               "status": "passed",
-              "duration": 13961000000
+              "duration": 15004000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "Page Title should be \"ATMECS - Falcon Test Repotrs\"",
+            "name": "Verify whether all the project available on the dashboard page",
             "match": {
-              "location": "stepdefinitions\\dashboard.ts:28"
+              "location": "stepdefinitions\\sampledashboard.ts:20"
             },
             "result": {
               "status": "passed",
-              "duration": 8172000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "Click REST API TEST RESULT Link in dashboard",
-            "match": {
-              "location": "stepdefinitions\\dashboard.ts:36"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 157000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 21,
-            "name": "User click on toggle button",
-            "match": {
-              "location": "stepdefinitions\\dashboard.ts:73"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2954000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 27,
-            "name": "User can able to view test status",
-            "match": {
-              "location": "stepdefinitions\\dashboard.ts:83"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 53000000,
-              "error_message": "AssertionError: expected { Object (flow_, stack_, ...) } to equal '10 TEST(S)'\n    at World.<anonymous> (C:\\Users\\ranjitha.selvam\\Desktop\\POM\\stepdefinitions\\dashboard.ts:89:27)\n    at Generator.next (<anonymous>)\n    at C:\\Users\\ranjitha.selvam\\Desktop\\POM\\JSFiles\\stepDefinitions\\dashboard.js:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\Users\\ranjitha.selvam\\Desktop\\POM\\JSFiles\\stepDefinitions\\dashboard.js:4:12)\n    at World.<anonymous> (C:\\Users\\ranjitha.selvam\\Desktop\\POM\\JSFiles\\stepDefinitions\\dashboard.js:68:12)"
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "main-navigation;recent-run",
-        "keyword": "Scenario",
-        "line": 41,
-        "name": "Recent run",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 42,
-            "name": "Click on recent run",
-            "result": {
-              "status": "undefined"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 43,
-            "name": "Select product",
-            "result": {
-              "status": "undefined"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 44,
-            "name": "Select test case",
-            "result": {
-              "status": "undefined"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 45,
-            "name": "User can view the tesct case details",
-            "result": {
-              "status": "undefined"
+              "duration": 6063000000
             }
           },
           {

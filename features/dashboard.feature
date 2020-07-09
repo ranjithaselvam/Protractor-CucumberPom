@@ -5,38 +5,34 @@ Feature: Main navigation
       When  User opens URL "http://10.10.10.231:8082/#/app/dashboard"
       Then  Page Title should be "ATMECS - Falcon Test Repotrs"
       And   Click REST API TEST RESULT Link in dashboard
-      # And   Select status as pass
-      # Then  Able to get pass test cases
-      #    | Test Case Name                | Duration | Status |
-      #    | deleteProjectApiTest          | 0 Sec    | Pass   |
-      #    | downloadImageApiTest          | 0 Sec    | Pass   |
-      #    | exportToExcelApiTest          | 0 Sec    | Pass   |
-      #    | getDashboardApiTest           | 1 Sec    | Pass   |
-      #    | recentRunsApiTest             | 0 Sec    | Pass   |
-      #    | reportViewApiTest             | 0 Sec    | Pass   |
-      #    | uploadImageApiTest            | 2 Sec    | Pass   |
-      #    | uploadTestngResultFileApiTest | 0 Sec    | Pass   |
-      #    | viewReportApiTest             | 0 Sec    | Pass   |
+      And   Select status as pass
+      Then  Able to get pass test cases
+         | Test Case Name                | Duration | Status |
+         | deleteProjectApiTest          | 0 Sec    | Pass   |
+         | downloadImageApiTest          | 0 Sec    | Pass   |
+         | exportToExcelApiTest          | 0 Sec    | Pass   |
+         | getDashboardApiTest           | 1 Sec    | Pass   |
+         | recentRunsApiTest             | 0 Sec    | Pass   |
+         | reportViewApiTest             | 0 Sec    | Pass   |
+         | uploadImageApiTest            | 2 Sec    | Pass   |
+         | uploadTestngResultFileApiTest | 0 Sec    | Pass   |
+         | viewReportApiTest             | 0 Sec    | Pass   |
 
       When  User click on toggle button
-      # Then  User can able to view total test run count
-      # Then  User can able to view pass test percentage
-      # Then  User can able to view fail test count
-      # Then  User can able to view skip test count
-      # Then  User can able to view total test case status
+   
       Then  User can able to view test status
-      #    | status  | details    |
-      #    | testrun | 10 TEST(S) |
-      #    | pass    | 9          |
-      #    | fail    | 1          |
-      #    | skip    | 0          |
+         | status  | details    |
+         | testrun | 10 TEST(S) |
+         | pass    | 9          |
+         | fail    | 1          |
+         | skip    | 0          |
 
 
 
 
 
-# Then  close the browser
-# @recentrun
+Then  close the browser
+@recentrun
 
    Scenario: Recent run
       When Click on recent run

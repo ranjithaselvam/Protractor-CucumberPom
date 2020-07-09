@@ -1,0 +1,6 @@
+{
+    "recentrun":"a[ng-href='#/recentruns/view'] > span",
+    "product":"//tbody[1]/tr[1]/td[contains(.,'REST API TEST RESULT')]",
+    "testcase":"//td[contains(.,'downloadImageApiTest')]",
+    "testdetails":".table-responsive"
+}

@@ -43,51 +43,46 @@ cucumber_1.When(/^Click REST API TEST RESULT Link in dashboard$/, { timeout: 700
         yield helper.locatortype(dashboardPageLoc.propertiesFileData('loc.link.restapi')).click();
     });
 });
-// When(/^Select status as pass$/,{ timeout: 70000 }, async function () {
-//     // await  element(by.xpath((<any>dashboardloc).status)).$((<any>dashboardloc).pass).click();
-//  helper.locatortype(dashboardPageLoc.propertiesFileData('loc.filter.status')).$('loc.filter.pass').click();
-// });
-// Then(/^Able to get pass test cases$/,{ timeout: 70000 }, async function (table:TableDefinition) {
-//     var status= await element(by.css((<any>dashboardloc).passtestcase)).getText();
-//     // helpers.getTtitle(element(by.css((<any>dashboardloc).passtestcase)));
-//     console.log(status);
-//     var detail=table.raw();
-//         detail.forEach(function(value)
-//         {
-//             console.log("expec :"+value);
-//             // expect(detail).to.be.equals(value)
+cucumber_1.When(/^Select status as pass$/, { timeout: 70000 }, function () {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield protractor_1.element(protractor_1.by.cssContainingText("option", "Pass")).click();
+        // helper.scrollToDown(200);
+    });
+});
+// Then(/^Able to get pass test cases$/, { timeout: 70000 }, async function (table:TableDefinition) {
+//     var actualdata:string[];
+//     var assertvalue:string[];
+//    await  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.passtestcase')).then(function (passStatus) {
+//         actualdata=passStatus.split("\n");
+//          assertvalue=actualdata[3].split(" ");
+//         console.log(assertvalue[0]);
+//     });
+//     var detail = table.raw();
+//         detail.forEach(function (value) {
+//             console.log("expec :" + value[0]);
+//             expect(assertvalue[0]).to.be.equals(value[0]);
 //         });
-//     //expect(status).to.be.equals(detail.Test Case Name );
 // });
 cucumber_1.When(/^User click on toggle button$/, { timeout: 100000 }, function () {
     return __awaiter(this, void 0, void 0, function* () {
         yield helper.locatortype(dashboardPageLoc.propertiesFileData('loc.btn.toggle')).click();
     });
 });
-cucumber_1.Then(/^User can able to view test status$/, { timeout: 100000 }, function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        // 	var actualtest =	await element(by.xpath((<any>dashboardloc).totaltest)).getText();
-        var testcase = helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.totaltest'));
-        console.log("xxxx :" + testcase);
-        chai_1.expect(testcase).to.be.equals('10 TEST(S)');
-        //    var actualpass=await element(by.xpath((<any>dashboardloc).passtest)).getText();
-        //    var actualfail=await element(by.xpath((<any>dashboardloc).failtest)).getText();
-        //    var actualskip=await element(by.xpath((<any>dashboardloc).skiptest)).getText();
-        // //    var rows=table.hashes();
-        // //    _.each(rows,function(row:any)
-        // //     {
-        // //       console.log(row.status+" "+row.details)
-        // //      })
-        //      var expected=table.rowsHash()
-        //   expect(actualtest).to.be.equals(expected.testrun);
-        //   expect(actualpass).to.be.equals(expected.pass);
-        //   expect(actualfail).to.be.equals(expected.fail);
-        //   expect(actualskip).to.be.equals(expected.skip);
-        // // expect(pass1).to.be.equals(row.pass)
-        // // expect(fail1).to.be.equals(row.fail)
-        // // expect(skip1).to.be.equals(row.skip)
-    });
-});
+// Then(/^User can able to view test status$/, { timeout: 100000 }, async function () {
+//     // 	var actualtest =	await element(by.xpath((<any>dashboardloc).totaltest)).getText();
+//     var actualtest=  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.totaltest'));
+//     var actualpass=  helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.passtest'));
+//     var actualfail =helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.failtest'));
+//     var actualskip= helper.getElementText(dashboardPageLoc.propertiesFileData('loc.txt.skiptest'));
+//    var actualpass=await element(by.xpath((<any>dashboardloc).passtest)).getText();
+//    var actualfail=await element(by.xpath((<any>dashboardloc).failtest)).getText();
+//    var actualskip=await element(by.xpath((<any>dashboardloc).skiptest)).getText();
+//      var expected=table.rowsHash();
+//   expect(actualtest).to.be.equals(expected.testrun);
+//   expect(actualpass).to.be.equals(expected.pass);
+//   expect(actualfail).to.be.equals(expected.fail);
+//   expect(actualskip).to.be.equals(expected.skip);
+// });
 // /*SCENARIO :2 */
 // When(/^Click on recent run$/,  { timeout: 100000 }, async function () {
 //     await element(by.css((<any>recentrunloc).recentrun)).click();
@@ -102,4 +97,4 @@ cucumber_1.Then(/^User can able to view test status$/, { timeout: 100000 }, func
 //  var status=   await element(by.css((<any>recentrunloc).testdetails)).getText();
 // 	console.log("Status :"+status);
 // });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGFzaGJvYXJkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3RlcGRlZmluaXRpb25zL2Rhc2hib2FyZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUNBLHVDQUE0RTtBQUM1RSwyQ0FBb0Q7QUFDcEQsK0JBQTZCO0FBQzdCLDJEQUF3RDtBQUN4RCxzRUFBcUU7QUFDckUsa0RBQStDO0FBQy9DLElBQUksTUFBTSxHQUFHLElBQUksNkJBQWEsRUFBRSxDQUFDO0FBQ2pDLElBQUksZ0JBQWdCLEdBQUcsSUFBSSx5Q0FBb0IsQ0FBQyxtQkFBUSxDQUFDLGFBQWEsQ0FBQyxDQUFDO0FBR3hFLGdCQUFLLENBQUMsa0NBQWtDLEVBQUUsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLEVBQUU7O1FBQzFELE9BQU8sQ0FBQyxHQUFHLENBQUMseUJBQXlCLENBQUMsQ0FBQTtRQUN0QyxvQkFBTyxDQUFDLHFCQUFxQixDQUFDLElBQUksQ0FBQyxDQUFDO1FBQ3BDLG9CQUFPLENBQUMsTUFBTSxFQUFFLENBQUMsTUFBTSxFQUFFLENBQUMsUUFBUSxFQUFFLENBQUM7SUFDekMsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUVILGVBQUksQ0FBQyw0QkFBNEIsRUFBRSxFQUFFLE9BQU8sRUFBRSxLQUFLLEVBQUUsRUFBRSxVQUFnQixHQUFHOztRQUN0RSxNQUFNLG9CQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1FBQ3ZCLG9CQUFPLENBQUMsYUFBYSxFQUFFLENBQUMsSUFBSSxDQUFDLFVBQVUsU0FBUztZQUM1QyxhQUFNLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUMsU0FBUyxDQUFDLENBQUE7UUFDdkMsQ0FBQyxDQUFDLENBQUM7SUFFUCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBSUgsZUFBSSxDQUFDLGtDQUFrQyxFQUFFLEVBQUUsT0FBTyxFQUFFLEtBQUssRUFBRSxFQUFFLFVBQWdCLGFBQWE7O1FBR3RGLElBQUksUUFBUSxHQUFHLE1BQU0sTUFBTSxDQUFDLFlBQVksRUFBRSxDQUFDO1FBQzNDLGFBQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQyxhQUFhLENBQUMsQ0FBQztJQUNqRCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBR0gsZUFBSSxDQUFDLGdEQUFnRCxFQUFFLEVBQUUsT0FBTyxFQUFFLEtBQUssRUFBRSxFQUFFOztRQUV2RSxNQUFNLE1BQU0sQ0FBQyxXQUFXLENBQUMsZ0JBQWdCLENBQUMsa0JBQWtCLENBQUMsa0JBQWtCLENBQUMsQ0FBQyxDQUFDLEtBQUssRUFBRSxDQUFDO0lBRTlGLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFFSCx5RUFBeUU7QUFFekUsbUdBQW1HO0FBQ25HLDhHQUE4RztBQUM5RyxNQUFNO0FBSU4sb0dBQW9HO0FBRXBHLHFGQUFxRjtBQUNyRiwrRUFBK0U7QUFDL0UsMkJBQTJCO0FBQzNCLDhCQUE4QjtBQUU5Qix5Q0FBeUM7QUFDekMsWUFBWTtBQUVaLDRDQUE0QztBQUM1QyxvREFBb0Q7QUFDcEQsY0FBYztBQUdkLDZEQUE2RDtBQU03RCxNQUFNO0FBRU4sZUFBSSxDQUFDLCtCQUErQixFQUFDLEVBQUUsT0FBTyxFQUFFLE1BQU0sRUFBRSxFQUFFOztRQUV4RCxNQUFPLE1BQU0sQ0FBQyxXQUFXLENBQUMsZ0JBQWdCLENBQUMsa0JBQWtCLENBQUMsZ0JBQWdCLENBQUMsQ0FBQyxDQUFDLEtBQUssRUFBRSxDQUFDO0lBQzNGLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFPSCxlQUFJLENBQUMscUNBQXFDLEVBQUMsRUFBRSxPQUFPLEVBQUUsTUFBTSxFQUFFLEVBQUU7O1FBR2hFLHNGQUFzRjtRQUNuRixJQUFJLFFBQVEsR0FBRSxNQUFNLENBQUMsY0FBYyxDQUFDLGdCQUFnQixDQUFDLGtCQUFrQixDQUFDLG1CQUFtQixDQUFDLENBQUMsQ0FBQztRQUM5RixPQUFPLENBQUMsR0FBRyxDQUFDLFFBQVEsR0FBQyxRQUFRLENBQUMsQ0FBQTtRQUM5QixhQUFNLENBQUMsUUFBUSxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUMsWUFBWSxDQUFDLENBQUE7UUFDOUMscUZBQXFGO1FBRXJGLHFGQUFxRjtRQUVyRixxRkFBcUY7UUFJckYsaUNBQWlDO1FBQ2pDLHNDQUFzQztRQUN0QyxXQUFXO1FBQ1gsbURBQW1EO1FBQ25ELGFBQWE7UUFDYixxQ0FBcUM7UUFFckMsdURBQXVEO1FBQ3ZELG9EQUFvRDtRQUNwRCxvREFBb0Q7UUFDcEQsb0RBQW9EO1FBRXBELDBDQUEwQztRQUMxQywwQ0FBMEM7UUFDMUMsMENBQTBDO0lBRTFDLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFFSCxtQkFBbUI7QUFFbkIsMEVBQTBFO0FBQzFFLG9FQUFvRTtBQUNwRSxNQUFNO0FBR04scUVBQXFFO0FBQ3JFLG9FQUFvRTtBQUVwRSxNQUFNO0FBQ04sdUVBQXVFO0FBRXZFLHFFQUFxRTtBQUNyRSxNQUFNO0FBRU4sMkZBQTJGO0FBQzNGLG1GQUFtRjtBQUNuRixtQ0FBbUM7QUFDbkMsTUFBTSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGFzaGJvYXJkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3RlcGRlZmluaXRpb25zL2Rhc2hib2FyZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUNBLHVDQUE0RTtBQUM1RSwyQ0FBb0Q7QUFDcEQsK0JBQTZCO0FBQzdCLDJEQUF3RDtBQUN4RCxzRUFBcUU7QUFDckUsa0RBQStDO0FBSy9DLElBQUksTUFBTSxHQUFHLElBQUksNkJBQWEsRUFBRSxDQUFDO0FBQ2pDLElBQUksZ0JBQWdCLEdBQUcsSUFBSSx5Q0FBb0IsQ0FBQyxtQkFBUSxDQUFDLGFBQWEsQ0FBQyxDQUFDO0FBR3hFLGdCQUFLLENBQUMsa0NBQWtDLEVBQUUsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLEVBQUU7O1FBQzFELE9BQU8sQ0FBQyxHQUFHLENBQUMseUJBQXlCLENBQUMsQ0FBQTtRQUN0QyxvQkFBTyxDQUFDLHFCQUFxQixDQUFDLElBQUksQ0FBQyxDQUFDO1FBQ3BDLG9CQUFPLENBQUMsTUFBTSxFQUFFLENBQUMsTUFBTSxFQUFFLENBQUMsUUFBUSxFQUFFLENBQUM7SUFDekMsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUVILGVBQUksQ0FBQyw0QkFBNEIsRUFBRSxFQUFFLE9BQU8sRUFBRSxLQUFLLEVBQUUsRUFBRSxVQUFnQixHQUFHOztRQUN0RSxNQUFNLG9CQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1FBQ3ZCLG9CQUFPLENBQUMsYUFBYSxFQUFFLENBQUMsSUFBSSxDQUFDLFVBQVUsU0FBUztZQUM1QyxhQUFNLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUMsU0FBUyxDQUFDLENBQUE7UUFDdkMsQ0FBQyxDQUFDLENBQUM7SUFFUCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBSUgsZUFBSSxDQUFDLGtDQUFrQyxFQUFFLEVBQUUsT0FBTyxFQUFFLEtBQUssRUFBRSxFQUFFLFVBQWdCLGFBQWE7O1FBR3RGLElBQUksUUFBUSxHQUFHLE1BQU0sTUFBTSxDQUFDLFlBQVksRUFBRSxDQUFDO1FBQzNDLGFBQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQyxhQUFhLENBQUMsQ0FBQztJQUNqRCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBR0gsZUFBSSxDQUFDLGdEQUFnRCxFQUFFLEVBQUUsT0FBTyxFQUFFLEtBQUssRUFBRSxFQUFFOztRQUV2RSxNQUFNLE1BQU0sQ0FBQyxXQUFXLENBQUMsZ0JBQWdCLENBQUMsa0JBQWtCLENBQUMsa0JBQWtCLENBQUMsQ0FBQyxDQUFDLEtBQUssRUFBRSxDQUFDO0lBRTlGLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFFSCxlQUFJLENBQUMseUJBQXlCLEVBQUUsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLEVBQUU7O1FBR2hELE1BQU0sb0JBQU8sQ0FBQyxlQUFFLENBQUMsaUJBQWlCLENBQUMsUUFBUSxFQUFFLE1BQU0sQ0FBQyxDQUFDLENBQUMsS0FBSyxFQUFFLENBQUM7UUFDOUQsNEJBQTRCO0lBRWhDLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFJSCxxR0FBcUc7QUFFckcsK0JBQStCO0FBQy9CLGdDQUFnQztBQUNoQyw0SEFBNEg7QUFFNUgsNkNBQTZDO0FBQzdDLGlEQUFpRDtBQUNqRCx1Q0FBdUM7QUFFdkMsVUFBVTtBQUNWLGdDQUFnQztBQUVoQyw0Q0FBNEM7QUFFNUMsaURBQWlEO0FBQ2pELDZEQUE2RDtBQUU3RCxjQUFjO0FBVWQsTUFBTTtBQUVOLGVBQUksQ0FBQywrQkFBK0IsRUFBRSxFQUFFLE9BQU8sRUFBRSxNQUFNLEVBQUUsRUFBRTs7UUFFdkQsTUFBTSxNQUFNLENBQUMsV0FBVyxDQUFDLGdCQUFnQixDQUFDLGtCQUFrQixDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQyxLQUFLLEVBQUUsQ0FBQztJQUM1RixDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBT0gsdUZBQXVGO0FBR3ZGLDZGQUE2RjtBQUM3Rix3R0FBd0c7QUFFeEcsdUdBQXVHO0FBQ3ZHLHNHQUFzRztBQUN0RyxzR0FBc0c7QUFHbEcscUZBQXFGO0FBRXJGLHFGQUFxRjtBQUVyRixxRkFBcUY7QUFJckYsc0NBQXNDO0FBRXRDLHVEQUF1RDtBQUN2RCxvREFBb0Q7QUFDcEQsb0RBQW9EO0FBQ3BELG9EQUFvRDtBQUd4RCxNQUFNO0FBRU4sbUJBQW1CO0FBRW5CLDBFQUEwRTtBQUMxRSxvRUFBb0U7QUFDcEUsTUFBTTtBQUdOLHFFQUFxRTtBQUNyRSxvRUFBb0U7QUFFcEUsTUFBTTtBQUNOLHVFQUF1RTtBQUV2RSxxRUFBcUU7QUFDckUsTUFBTTtBQUVOLDJGQUEyRjtBQUMzRixtRkFBbUY7QUFDbkYsbUNBQW1DO0FBQ25DLE1BQU0ifQ==

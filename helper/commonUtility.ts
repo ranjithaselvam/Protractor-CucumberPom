@@ -42,6 +42,7 @@ export class ElementHelper {
             case "Option":
                 elementObj = element(by.options(arrayLocator[1]))
                 break;
+               
             default:
                 elementObj = element(by.xpath(arrayLocator[1]))
         }
@@ -65,12 +66,14 @@ export class ElementHelper {
 
     // get text of the limit//
     getElementText(locator: string) {
-        return this.locatortype(locator).getText().then(function (text: string) {
-
-            return text
-        })
-
+        return this.locatortype(locator).getText//().then(function(txt:string)
+       
+    //    {
+    //        return txt;
+    //    } ) ;
     }
+
+    
 
 
     getpageTitle() {
@@ -82,7 +85,10 @@ export class ElementHelper {
 
         })
     }
-
+// scrow down
+scrollToDown(dowPosition: number) {
+    browser.executeScript(`window.scrollTo(0,${dowPosition})`);
+}
 
 
 }
